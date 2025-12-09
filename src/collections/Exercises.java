@@ -25,6 +25,5 @@ public class Exercises {
 		byDept.forEach((dept, empList) -> {
 			System.out.println(dept + ":" + empList);
 		});
-		System.out.println("hello");
 	}
 }
