@@ -1,7 +1,8 @@
 package collections;
 import java.util.*;
+import java.util.stream.Collectors;
 
-public class RichList {
+public class Exercises {
 	public static void main(String[] args) {
 		List<Employee> workers = Arrays.asList(
 				new Employee("Alice", "IT", 75000),
@@ -13,6 +14,9 @@ public class RichList {
 	            );
 		
 		
+		List<String> it= workers.stream().filter(e -> e.getDepartment()
+				.equals("IT")).map(e -> e.getName().toUpperCase()).collect(Collectors.toList());
 	
+		System.out.println(it);
 	}
 }
