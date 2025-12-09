@@ -18,5 +18,7 @@ public class Exercises {
 				.equals("IT")).map(e -> e.getName().toUpperCase()).collect(Collectors.toList());
 	
 		System.out.println(it);
+		
+		System.out.println(workers.stream().map(e -> e.getSalary()).reduce((double) 0, (subtotal,e) -> subtotal + e));
 	}
 }
