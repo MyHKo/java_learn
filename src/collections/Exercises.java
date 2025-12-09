@@ -20,5 +20,10 @@ public class Exercises {
 		System.out.println(it);
 		
 		System.out.println(workers.stream().map(e -> e.getSalary()).reduce((double) 0, (subtotal,e) -> subtotal + e));
+		
+		Map<String, List<Employee>> byDept = workers.stream().collect(Collectors.groupingBy(Employee::getDepartment));
+		byDept.forEach((dept, empList) -> {
+			System.out.println(dept + ":" + empList);
+		});
 	}
 }
