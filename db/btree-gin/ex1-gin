@@ -1,0 +1,6 @@
+CREATE TABLE posts (id serial, tags text[]);
+INSERT INTO posts (tags) VALUES ('{sql, db}'), ('{postgres, db}'), ('{linux, oss}');
+
+EXPLAIN ANALYZE SELECT * FROM posts WHERE tags @> ARRAY['db'];
+
+CREATE INDEX posts_idx ON posts USING GIN (tags);
