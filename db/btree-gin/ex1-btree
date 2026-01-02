@@ -2,3 +2,5 @@ CREATE TABLE products (id serial, price numeric);
 INSERT INTO products (price) SELECT random() * 1000 FROM generate_series(1, 100000);
 
 EXPLAIN ANALYZE SELECT * FROM products WHERE price BETWEEN 100 AND 150;
+
+CREATE INDEX inx_price ON products(price);
