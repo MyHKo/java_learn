@@ -1,0 +1,10 @@
+create table accounts (                                                 
+name TEXT PRIMARY KEY,
+balance INTEGER CHECK (balance >= 0));
+
+learning=> Begin;
+BEGIN
+learning=*> UPDATE accounts SET balance = balance - 200 where name = 'Lena';
+ERROR:  new row for relation "accounts" violates check constraint "accounts_balance_check"
+DETAIL:  Failing row contains (Lena, -100).
+learning=!> Rollback;
