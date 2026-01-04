@@ -26,3 +26,14 @@ learning=*> UPDATE accounts SET balance = balance - 200 where name = 'Lena';
 learning=*> UPDATE accounts SET balance = balance + 200 where name = 'Bob';
 Commit;
 
+Task 1 --------------------------
+
+BEGIN;
+
+UPDATE books SET status = 'available' WHERE name = 'book_name';
+
+UPDATE book_logs SET return_date = CURRENT_DATE WHERE name = 'book_name';
+
+UPDATE users SET active_borrows = active_borrows - 1 WHERE name = 'student_name';
+
+COMMIT; 
