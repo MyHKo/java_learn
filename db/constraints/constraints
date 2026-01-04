@@ -6,3 +6,6 @@ email VARCHAR(50) NOT NULL);
 ALTER TABLE app_users ADD CONSTRAINT uniq_email UNIQUE (email);
 
 ALTER TABLE employees ADD CONSTRAINT normal_dates CHECK (date_of_hire > '2010-01-01' AND date_of_hire < CURRENT_DATE);
+
+ALTER TABLE products ADD CONSTRAINT non_negative_price CHECK (price > 0);
+ALTER TABLE products ADD CONSTRAINT non_negative_stock CHECK (stock > 0);
