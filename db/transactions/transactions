@@ -1,3 +1,5 @@
+EX 1 ----------------------------
+
 create table accounts (                                                 
 name TEXT PRIMARY KEY,
 balance INTEGER CHECK (balance >= 0));
@@ -8,3 +10,19 @@ learning=*> UPDATE accounts SET balance = balance - 200 where name = 'Lena';
 ERROR:  new row for relation "accounts" violates check constraint "accounts_balance_check"
 DETAIL:  Failing row contains (Lena, -100).
 learning=!> Rollback;
+
+EX 2 ----------------------------
+learning=> Begin;
+BEGIN
+learning=*> UPDATE accounts SET balance = balance + 100 where name = 'Lena';
+UPDATE 1
+learning=*> SAVEPOINT sp1;
+SAVEPOINT
+learning=*> UPDATE accounts SET balance = balance - 300 where name = 'Lena';
+ERROR:  new row for relation "accounts" violates check constraint "accounts_balance_check"
+DETAIL:  Failing row contains (Lena, -100).
+learning=!> ROLLBACK TO sp1;
+learning=*> UPDATE accounts SET balance = balance - 200 where name = 'Lena';
+learning=*> UPDATE accounts SET balance = balance + 200 where name = 'Bob';
+Commit;
+
