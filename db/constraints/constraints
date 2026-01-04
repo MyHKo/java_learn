@@ -9,3 +9,5 @@ ALTER TABLE employees ADD CONSTRAINT normal_dates CHECK (date_of_hire > '2010-01
 
 ALTER TABLE products ADD CONSTRAINT non_negative_price CHECK (price > 0);
 ALTER TABLE products ADD CONSTRAINT non_negative_stock CHECK (stock > 0);
+
+ALTER TABLE tickets ADD CONSTRAINT summary CHECK ((status = 'pending') OR (status = 'resolved' AND resolution_summary IS NOT NULL));
