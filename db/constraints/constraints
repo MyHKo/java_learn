@@ -3,3 +3,4 @@ user_id SERIAL PRIMARY KEY,
 username VARCHAR(50) NOT NULL,
 email VARCHAR(50) NOT NULL);
 
+ALTER TABLE app_users ADD CONSTRAINT uniq_email UNIQUE (email);
