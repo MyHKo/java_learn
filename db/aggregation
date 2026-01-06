@@ -1,2 +1,7 @@
 Task 1 -------------
 SELECT COUNT(name),department FROM employees GROUP BY department;
+
+Task 2 -------------
+SELECT SUM(salary) as "Total", AVG(salary) AS "Average salary", department FROM employees GROUP BY department;
+
+
