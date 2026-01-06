@@ -4,4 +4,7 @@ SELECT COUNT(name),department FROM employees GROUP BY department;
 Task 2 -------------
 SELECT SUM(salary) as "Total", AVG(salary) AS "Average salary", department FROM employees GROUP BY department;
 
+Task 3 -------------
+SELECT department FROM employees GROUP BY department HAVING(AVG(performance_score) < 3);
+
 
