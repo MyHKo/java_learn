@@ -7,4 +7,5 @@ SELECT SUM(salary) as "Total", AVG(salary) AS "Average salary", department FROM 
 Task 3 -------------
 SELECT department FROM employees GROUP BY department HAVING(AVG(performance_score) < 3);
 
-
+Task 4 -------------
+SELECT department, ROUND(AVG(salary),2) FROM employees WHERE department = 'IT' OR department = 'Sales' GROUP BY department;
