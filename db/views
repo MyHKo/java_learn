@@ -12,3 +12,9 @@ Task 3 -----------
 CREATE VIEW lowStockItems AS 
 SELECT * FROM Inventory WHERE stockLevel < 10
 WITH CHECK OPTION; -- Removed the semicolon after the WHERE clause
+
+Task 4 -----------
+CREATE VIEW MonthlyPerformance AS
+SELECT salesPersonID, DATE_TRUNC('month', saledate) as month, SUM(amount) 
+FROM sales 
+GROUP BY month, salesPersonID;
