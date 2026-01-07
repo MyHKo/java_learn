@@ -1,0 +1,5 @@
+Task 1 -----------
+CREATE VIEW StaffDirectory AS
+SELECT name, email FROM staff;
+
+
