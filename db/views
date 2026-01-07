@@ -2,4 +2,8 @@ Task 1 -----------
 CREATE VIEW StaffDirectory AS
 SELECT name, email FROM staff;
 
-
+Task 2 -----------
+CREATE VIEW product_summary AS
+SELECT name, Categories.categoryName, price 
+FROM products 
+INNER JOIN categories ON products.CategoryID = Categories.ID;
