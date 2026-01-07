@@ -7,3 +7,8 @@ CREATE VIEW product_summary AS
 SELECT name, Categories.categoryName, price 
 FROM products 
 INNER JOIN categories ON products.CategoryID = Categories.ID;
+
+Task 3 -----------
+CREATE VIEW lowStockItems AS 
+SELECT * FROM Inventory WHERE stockLevel < 10
+WITH CHECK OPTION; -- Removed the semicolon after the WHERE clause
