@@ -1,0 +1,11 @@
+CREATE TABLE inventory (
+    id SERIAL PRIMARY KEY,
+    item_name TEXT NOT NULL,
+    details JSONB
+);
+
+INSERT INTO inventory (item_name, details) VALUES
+('Health Potion', '{"type": "consumable", "stats": {"hp": 50}, "tags": ["magic", "healing"]}'),
+('Steel Sword', '{"type": "weapon", "stats": {"atk": 15, "durability": 100}, "tags": ["iron", "melee"]}'),
+('Mana Biscuit', '{"type": "consumable", "stats": {"mp": 20}, "tags": ["magic", "food"]}'),
+('Dragon Shield', '{"type": "armor", "stats": {"def": 45, "durability": 250}, "tags": ["rare", "fire-resistant"]}');
