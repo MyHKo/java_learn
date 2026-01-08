@@ -22,3 +22,6 @@ Select item_name from inventory where (details->'stats'->'durability')::int < 20
 
 Task 2 -----------
 Select item_name from inventory where details->'tags' @> '["iron"]';
+
+Task 3 -----------
+UPDATE inventory SET details =  jsonb_set(details, '{stats, hp}', '100', false);
