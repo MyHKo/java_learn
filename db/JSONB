@@ -9,3 +9,7 @@ INSERT INTO inventory (item_name, details) VALUES
 ('Steel Sword', '{"type": "weapon", "stats": {"atk": 15, "durability": 100}, "tags": ["iron", "melee"]}'),
 ('Mana Biscuit', '{"type": "consumable", "stats": {"mp": 20}, "tags": ["magic", "food"]}'),
 ('Dragon Shield', '{"type": "armor", "stats": {"def": 45, "durability": 250}, "tags": ["rare", "fire-resistant"]}');
+
+Ex 1 -------------
+Select item_name, details->'type' as type from inventory;
+Select item_name, details->>'type' as type from inventory;
