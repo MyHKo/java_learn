@@ -13,3 +13,6 @@ INSERT INTO inventory (item_name, details) VALUES
 Ex 1 -------------
 Select item_name, details->'type' as type from inventory;
 Select item_name, details->>'type' as type from inventory;
+
+Ex 2 -------------
+Select item_name as type from inventory where details @> '{"type": "consumable"}';
