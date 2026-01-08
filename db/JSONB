@@ -16,3 +16,6 @@ Select item_name, details->>'type' as type from inventory;
 
 Ex 2 -------------
 Select item_name as type from inventory where details @> '{"type": "consumable"}';
+
+Task 1 -----------
+Select item_name from inventory where (details->'stats'->'durability')::int < 200;
