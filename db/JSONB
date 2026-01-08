@@ -19,3 +19,6 @@ Select item_name as type from inventory where details @> '{"type": "consumable"}
 
 Task 1 -----------
 Select item_name from inventory where (details->'stats'->'durability')::int < 200;
+
+Task 2 -----------
+Select item_name from inventory where details->'tags' @> '["iron"]';
